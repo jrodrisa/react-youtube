@@ -8,3 +8,7 @@
     max-width: 200px;
     max-height: 250px ;
 }
+
+.ui.comments .reply.form textarea {
+    height: 5em;
+}
