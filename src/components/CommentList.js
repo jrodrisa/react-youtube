@@ -1,21 +1,14 @@
 import React, {useState} from 'react'
 import { Comment, Button, Form, Header } from 'semantic-ui-react'
 import CommentItem from "./CommentItem"
+import image from "../style/image/cute.png"
 
 const CommentExampleComment = () => {
   
-  const [image, setImage] = useState("image.jpg")
-  const [userName, setUserName] = useState('Username')
+
+  const userName = 'Username'
   const [content, setContent] = useState('')
   const [comments, setComments] = useState([])
-
-  function getUsername(){
-    //TODO
-  }
-
-  function randomPicture(){
-    //TODO
-  }
 
   function getDate(){
     const today = new Date()
@@ -29,6 +22,7 @@ const CommentExampleComment = () => {
   }
 
   const handleSubmit = (event) => {
+    if (content !== ""){
       const date = getDate()
       let newComment = {
         date: date,
@@ -39,6 +33,8 @@ const CommentExampleComment = () => {
    
      setComments([...comments, newComment])
      setContent('')
+    }
+      
   }
 
   return(
